@@ -6,3 +6,40 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+
+  /* white padding around entire web-page */
+  padding: 30px;
+}
+
+.header {
+  /* 95% of the viewport height */
+  height: 95vh;
+  /*
+
+    two background images.
+    order is important
+    first is gradiant with alpha that colors the image that peaks through in second layer
+    */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)),
+  url("../img/hero.jpg");
+  background-position: top;
+
+  /** whatever the width of the element will try to fit iage to size */
+  background-size: cover;
+
+  /* This clips everything not contained in the polygon. This defines a polygon that cuts own triangle in bottom right corner */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh , 0 100%);
+}
