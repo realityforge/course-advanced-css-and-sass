@@ -1,0 +1,11 @@
+# DO NOT EDIT: File is auto-generated
+* -text
+*.css text
+*.html text
+*.jpg binary
+*.json text
+*.md text
+*.png binary
+.gitignore text
+.ruby-version text
+Gemfile text
