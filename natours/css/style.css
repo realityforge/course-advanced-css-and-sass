@@ -41,5 +41,5 @@ body {
   background-size: cover;
 
   /* This clips everything not contained in the polygon. This defines a polygon that cuts own triangle in bottom right corner */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh , 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
