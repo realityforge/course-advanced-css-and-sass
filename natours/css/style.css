@@ -31,7 +31,7 @@ body {
 
     two background images.
     order is important
-    first is gradiant with alpha that colors the image that peaks through in second layer
+    first is gradient with alpha that colors the image that peaks through in second layer
     */
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)),
   url("../img/hero.jpg");
