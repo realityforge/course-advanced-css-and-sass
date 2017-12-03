@@ -40,6 +40,18 @@ body {
   /** whatever the width of the element will try to fit iage to size */
   background-size: cover;
 
+  position: relative;
+
   /* This clips everything not contained in the polygon. This defines a polygon that cuts own triangle in bottom right corner */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
+.logo {
+  height: 35px;
 }
