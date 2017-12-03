@@ -55,3 +55,23 @@ body {
 .logo {
   height: 35px;
 }
+
+.heading-primary {
+  color: #FFF;
+  /* Make sure all text is uppercase */
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+}
