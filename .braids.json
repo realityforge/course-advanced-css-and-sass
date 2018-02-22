@@ -1,7 +1,10 @@
 {
-  "vendor/advanced-css-course": {
-    "url": "https://github.com/jonasschmedtmann/advanced-css-course.git",
-    "branch": "master",
-    "revision": "d673071c8c401af8a1bc79b71cf1bc23ab01bbab"
+  "config_version": 1,
+  "mirrors": {
+    "vendor/advanced-css-course": {
+      "url": "https://github.com/jonasschmedtmann/advanced-css-course.git",
+      "branch": "master",
+      "revision": "d673071c8c401af8a1bc79b71cf1bc23ab01bbab"
+    }
   }
 }
