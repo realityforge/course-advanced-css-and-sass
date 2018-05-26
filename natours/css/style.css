@@ -14,6 +14,12 @@ Dark green: #28b485
 }
 
 body {
+  /*
+  Everything related to inheritable font characteristics should be put
+  in the body tag rather than the above universal selector. This is primarily
+  for performance reasons as the universal selector applies everywhere but fonts
+  only apply to elements below the body.
+  */
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 16px;
