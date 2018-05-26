@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'zapwhite', '= 2.8.0'
-gem 'braid', '= 1.0.21'
+gem 'zapwhite', '= 2.10.0'
+gem 'braid', '= 1.1.0'
