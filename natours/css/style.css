@@ -43,7 +43,7 @@ body {
   url("../img/hero.jpg");
   background-position: top;
 
-  /** whatever the width of the element will try to fit iage to size */
+  /** whatever the width of the element will try to fit image to size */
   background-size: cover;
 
   position: relative;
