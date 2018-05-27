@@ -39,12 +39,14 @@ body {
     order is important
     first is gradient with alpha that colors the image that peaks through in second layer
     */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)),
-  url("../img/hero.jpg");
+  /* background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("../img/hero.jpg"); */
   /*
     The top of the image is anchored to the top of the .header.
   */
-  background-position: top;
+  /* background-position: top; */
+
+  /* The other background properties can be optimized into the following. */
+  background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("../img/hero.jpg") top;
 
   /** whatever the width of the element will try to fit image to size */
   background-size: cover;
