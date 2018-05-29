@@ -78,6 +78,9 @@ body {
   color: #FFF;
   /* Make sure all text is uppercase */
   text-transform: uppercase;
+
+  /* this stops the shake at the end of the animation */
+  backface-visibility: hidden;
 }
 
 .heading-primary-main {
