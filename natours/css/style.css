@@ -157,11 +157,20 @@ link is the special pseudo class available on <a/> class as is visited:
 
 .button:hover {
   transform: translateY(-3px);
+
+  box-shadow: /* x */ 0 /* y */ 10px /* blur */ 20px /* alpha value */ rgba(0, 0, 0, .2);
 }
 
 /* :active indicates when button is clicked */
 .button:active {
   transform: translateY(-1px);
+  /*
+  The shadow seems closer and less blurry compared to hover
+
+  This gives the user the feel that pressed button and it got closer to page so materialistic interaction
+  */
+
+  box-shadow: /* x */ 0 /* y */ 5px /* blur */ 10px /* alpha value */ rgba(0, 0, 0, .2);
 }
 
 .button-white {
