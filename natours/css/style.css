@@ -72,6 +72,7 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
@@ -136,4 +137,34 @@ body {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+/*
+link is the special pseudo class available on <a/> class as is visited:
+*/
+.button:link, .button:visited {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 100px;
+  /*
+    This transition smooths the state transition for :hover and :active state.
+    So translations are transitioned to and from
+   */
+  transition: all 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+/* :active indicates when button is clicked */
+.button:active {
+  transform: translateY(-1px);
+}
+
+.button-white {
+  background-color: #ffffff;
+  color: #777;
 }
