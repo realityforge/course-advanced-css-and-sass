@@ -139,6 +139,17 @@ body {
   }
 }
 
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /*
 link is the special pseudo class available on <a/> class as is visited:
 */
@@ -153,6 +164,21 @@ link is the special pseudo class available on <a/> class as is visited:
     So translations are transitioned to and from
    */
   transition: all 0.2s;
+
+  /* Require this relative as the :after psuedo element has absolute position which searches up parents till it finds relative */
+  position: relative;
+}
+
+.button-animated {
+  animation-name: moveInButton;
+  animation-duration: 0.5s;
+  animation-delay: 0.75s;
+  animation-timing-function: ease-in-out;
+
+  /*
+   This applies the 0% animation properties before the animation starts
+   */
+  animation-fill-mode: backwards;
 }
 
 .button:hover {
@@ -176,4 +202,37 @@ link is the special pseudo class available on <a/> class as is visited:
 .button-white {
   background-color: #ffffff;
   color: #777;
+}
+
+.button::after {
+  /* The :after pseudo element has to have both a content and a display if you want it to display */
+  content: "";
+  /* It is inline-block because .button is alos an inline-block */
+  display: inline-block;
+
+  /*
+  The :after psuedo element is treated like a child element so these 100% measures
+  indicate it should be the same size as the container element.
+  */
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+
+  transition: all 0.4s;
+
+  /* These next properties put it directly under the existing element */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+}
+
+.button-white::after {
+  background-color: #fff;
+}
+
+.button:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
