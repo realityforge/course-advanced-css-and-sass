@@ -7,12 +7,17 @@ Dark green: #28b485
 
 */
 
-* {
+/* all elements including synthetic psuedo elements */
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   /*
     inherited - ultimately from body.
-    This is considered a better practice as a component and/or plugin can override the behaviour for an element.
+    This is considered a better practice as a component and/or plugin can override the
+    behaviour for an element. However to make this work we need to include pseudo elements
+    in universal matcher
    */
   box-sizing: inherit;
 }
