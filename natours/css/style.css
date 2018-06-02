@@ -10,7 +10,11 @@ Dark green: #28b485
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /*
+    inherited - ultimately from body.
+    This is considered a better practice as a component and/or plugin can override the behaviour for an element.
+   */
+  box-sizing: inherit;
 }
 
 html {
@@ -42,6 +46,7 @@ body {
 
   /* white padding around entire web-page */
   padding: 3rem;
+  box-sizing: border-box;
 }
 
 .header {
