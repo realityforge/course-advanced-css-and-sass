@@ -13,6 +13,21 @@ Dark green: #28b485
   box-sizing: border-box;
 }
 
+html {
+  /*
+  Use 10 as font-size so that 1 rem is == 1rem and figuring out what you should
+  change values to is easy as just divide by 10
+  */
+  /*font-size: 10px*/;
+
+  /*
+   Instead of using fixed base font-size we can use a proportional size. That way if the user has increased the
+   font-size (i.e. they are may have sight challenges) we are not overriding. Browsers normally have 16px as the
+   default  font size and thus 100% == 16px and 62.5% == 10px.
+   */
+  font-size: 62.5%;
+}
+
 body {
   /*
   Everything related to inheritable font characteristics should be put
@@ -22,12 +37,11 @@ body {
   */
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
   color: #777;
 
   /* white padding around entire web-page */
-  padding: 30px;
+  padding: 3rem;
 }
 
 .header {
@@ -59,12 +73,12 @@ body {
 
 .logo-box {
   position: absolute;
-  left: 40px;
-  top: 40px;
+  left: 4rem;
+  top: 4rem;
 }
 
 .logo {
-  height: 35px;
+  height: 3.5rem;
 }
 
 .text-box {
@@ -80,7 +94,7 @@ body {
   /* Make sure all text is uppercase */
   text-transform: uppercase;
 
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 
   /* this stops the shake at the end of the animation */
   backface-visibility: hidden;
@@ -88,10 +102,10 @@ body {
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
-  padding-left: 35px;
+  letter-spacing: 3.5rem;
+  padding-left: 3.5rem;
   text-align: center;
   animation-name: moveInLeft;
   /* runs animation for this amount of time */
@@ -101,10 +115,10 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
-  padding-left: 17.4px;
+  letter-spacing: 1.74rem;
+  padding-left: 1.74rem;
   text-align: center;
   animation-name: moveInRight;
   animation-duration: 1s;
@@ -114,10 +128,10 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
   100% {
     opacity: 1;
@@ -128,10 +142,10 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -142,7 +156,7 @@ body {
 @keyframes moveInButton {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
   100% {
     opacity: 1;
@@ -157,8 +171,9 @@ link is the special pseudo class available on <a/> class as is visited:
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
-  border-radius: 100px;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  font-size: 1.6em;
   /*
     This transition smooths the state transition for :hover and :active state.
     So translations are transitioned to and from
@@ -182,21 +197,21 @@ link is the special pseudo class available on <a/> class as is visited:
 }
 
 .button:hover {
-  transform: translateY(-3px);
+  transform: translateY(-0.3rem);
 
-  box-shadow: /* x */ 0 /* y */ 10px /* blur */ 20px /* alpha value */ rgba(0, 0, 0, .2);
+  box-shadow: /* x */ 0 /* y */ 1rem /* blur */ 2rem /* alpha value */ rgba(0, 0, 0, .2);
 }
 
 /* :active indicates when button is clicked */
 .button:active {
-  transform: translateY(-1px);
+  transform: translateY(-0.1rem);
   /*
   The shadow seems closer and less blurry compared to hover
 
   This gives the user the feel that pressed button and it got closer to page so materialistic interaction
   */
 
-  box-shadow: /* x */ 0 /* y */ 5px /* blur */ 10px /* alpha value */ rgba(0, 0, 0, .2);
+  box-shadow: /* x */ 0 /* y */ 0.5rem /* blur */ 1rem /* alpha value */ rgba(0, 0, 0, .2);
 }
 
 .button-white {
@@ -216,7 +231,7 @@ link is the special pseudo class available on <a/> class as is visited:
   */
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
 
   transition: all 0.4s;
 
