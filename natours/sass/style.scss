@@ -1,11 +1,6 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
 
 /* all elements including synthetic psuedo elements */
 *,
@@ -27,7 +22,8 @@ html {
   Use 10 as font-size so that 1 rem is == 1rem and figuring out what you should
   change values to is easy as just divide by 10
   */
-  /*font-size: 10px*/;
+  /*font-size: 10px*/
+;
 
   /*
    Instead of using fixed base font-size we can use a proportional size. That way if the user has increased the
@@ -70,7 +66,7 @@ body {
   /* background-position: top; */
 
   /* The other background properties can be optimized into the following. */
-  background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url(../img/hero.jpg) top;
+  background: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg) top;
 
   /** whatever the width of the element will try to fit image to size */
   background-size: cover;
@@ -209,7 +205,11 @@ link is the special pseudo class available on <a/> class as is visited:
 .button:hover {
   transform: translateY(-0.3rem);
 
-  box-shadow: /* x */ 0 /* y */ 1rem /* blur */ 2rem /* alpha value */ rgba(0, 0, 0, .2);
+  box-shadow: /* x */
+    0 /* y */
+    1rem /* blur */
+    2rem /* alpha value */
+    rgba(0, 0, 0, .2);
 }
 
 /* :active indicates when button is clicked */
@@ -221,7 +221,11 @@ link is the special pseudo class available on <a/> class as is visited:
   This gives the user the feel that pressed button and it got closer to page so materialistic interaction
   */
 
-  box-shadow: /* x */ 0 /* y */ 0.5rem /* blur */ 1rem /* alpha value */ rgba(0, 0, 0, .2);
+  box-shadow: /* x */
+    0 /* y */
+    0.5rem /* blur */
+    1rem /* alpha value */
+    rgba(0, 0, 0, .2);
 }
 
 .button--white {

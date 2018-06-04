@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "compile:sass": "node-sass sass/style.scss --output css/style.css"
+  },
   "devDependencies": {
     "node-sass": "^4.9.0"
   }
