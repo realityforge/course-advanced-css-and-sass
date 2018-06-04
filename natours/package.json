@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "compile:sass": "node-sass sass/style.scss --output css/style.css"
+    "compile:sass": "node-sass sass/style.scss --output css"
   },
   "devDependencies": {
     "node-sass": "^4.9.0"
