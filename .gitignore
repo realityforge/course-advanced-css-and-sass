@@ -4,3 +4,5 @@ Gemfile.lock
 /*.iws
 /*/tmp
 /tmp
+/natours/yarn-error.log
+/natours/node_modules
