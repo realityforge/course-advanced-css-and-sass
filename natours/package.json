@@ -4,10 +4,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "devserver": "live-server",
     "compile:sass": "node-sass sass/style.scss --output css",
     "compile:sass:watch": "node-sass sass/style.scss --output css --watch"
   },
   "devDependencies": {
+    "live-server": "^1.2.0",
     "node-sass": "^4.9.0"
   }
 }
