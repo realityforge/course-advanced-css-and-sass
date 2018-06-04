@@ -3,6 +3,7 @@ $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 
 $color-grey-dark: #777;
+$color-white: #FFF;
 
 /* all elements including synthetic psuedo elements */
 *,
@@ -98,7 +99,7 @@ body {
 }
 
 .heading-primary {
-  color: #FFF;
+  color: $color-white;
   /* Make sure all text is uppercase */
   text-transform: uppercase;
 
@@ -231,7 +232,7 @@ link is the special pseudo class available on <a/> class as is visited:
 }
 
 .button--white {
-  background-color: #ffffff;
+  background-color: $color-white;
   color: $color-grey-dark;
 }
 
@@ -260,7 +261,7 @@ link is the special pseudo class available on <a/> class as is visited:
 }
 
 .button--white::after {
-  background-color: #fff;
+  background-color: $color-white;
 }
 
 .button:hover::after {
