@@ -4,6 +4,7 @@ $color-primary-dark: #28b485;
 
 $color-grey-dark: #777;
 $color-white: #FFF;
+$color-black: #000;
 
 /* all elements including synthetic psuedo elements */
 *,
@@ -212,7 +213,7 @@ link is the special pseudo class available on <a/> class as is visited:
     0 /* y */
     1rem /* blur */
     2rem /* alpha value */
-    rgba(0, 0, 0, .2);
+    rgba($color-black, .2);
 }
 
 /* :active indicates when button is clicked */
@@ -228,7 +229,7 @@ link is the special pseudo class available on <a/> class as is visited:
     0 /* y */
     0.5rem /* blur */
     1rem /* alpha value */
-    rgba(0, 0, 0, .2);
+    rgba($color-black, .2);
 }
 
 .button--white {
