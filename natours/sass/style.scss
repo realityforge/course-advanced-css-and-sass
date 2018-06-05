@@ -174,98 +174,100 @@ body {
   }
 }
 
-/*
-link is the special pseudo class available on <a/> class as is visited:
-*/
-.button:link, .button:visited {
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
-  font-size: 1.6em;
+.button {
   /*
-    This transition smooths the state transition for :hover and :active state.
-    So translations are transitioned to and from
-   */
-  transition: all 0.2s;
-
-  /* Require this relative as the :after psuedo element has absolute position which searches up parents till it finds relative */
-  position: relative;
-}
-
-.button--animated {
-  animation-name: moveInButton;
-  animation-duration: 0.5s;
-  animation-delay: 0.75s;
-  animation-timing-function: ease-in-out;
-
-  /*
-   This applies the 0% animation properties before the animation starts
-   */
-  animation-fill-mode: backwards;
-}
-
-.button:hover {
-  transform: translateY(-0.3rem);
-
-  box-shadow: /* x */
-    0 /* y */
-    1rem /* blur */
-    2rem /* alpha value */
-    rgba($color-black, .2);
-}
-
-/* :active indicates when button is clicked */
-.button:active {
-  transform: translateY(-0.1rem);
-  /*
-  The shadow seems closer and less blurry compared to hover
-
-  This gives the user the feel that pressed button and it got closer to page so materialistic interaction
+  link is the special pseudo class available on <a/> class as is visited:
   */
+  &:link, &:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    font-size: 1.6em;
+    /*
+      This transition smooths the state transition for :hover and :active state.
+      So translations are transitioned to and from
+     */
+    transition: all 0.2s;
 
-  box-shadow: /* x */
-    0 /* y */
-    0.5rem /* blur */
-    1rem /* alpha value */
-    rgba($color-black, .2);
-}
+    /* Require this relative as the :after psuedo element has absolute position which searches up parents till it finds relative */
+    position: relative;
+  }
 
-.button--white {
-  background-color: $color-white;
-  color: $color-grey-dark;
-}
+  &--animated {
+    animation-name: moveInButton;
+    animation-duration: 0.5s;
+    animation-delay: 0.75s;
+    animation-timing-function: ease-in-out;
 
-.button::after {
-  /* The :after pseudo element has to have both a content and a display if you want it to display */
-  content: "";
-  /* It is inline-block because .button is alos an inline-block */
-  display: inline-block;
+    /*
+     This applies the 0% animation properties before the animation starts
+     */
+    animation-fill-mode: backwards;
+  }
 
-  /*
-  The :after psuedo element is treated like a child element so these 100% measures
-  indicate it should be the same size as the container element.
-  */
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
+  &:hover {
+    transform: translateY(-0.3rem);
 
-  transition: all 0.4s;
+    box-shadow: /* x */
+      0 /* y */
+      1rem /* blur */
+      2rem /* alpha value */
+      rgba($color-black, .2);
 
-  /* These next properties put it directly under the existing element */
-  position: absolute;
-  top: 0;
-  left: 0;
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
 
-  z-index: -1;
-}
+  /* :active indicates when button is clicked */
+  &:active {
+    transform: translateY(-0.1rem);
+    /*
+    The shadow seems closer and less blurry compared to hover
 
-.button--white::after {
-  background-color: $color-white;
-}
+    This gives the user the feel that pressed button and it got closer to page so materialistic interaction
+    */
 
-.button:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
+    box-shadow: /* x */
+      0 /* y */
+      0.5rem /* blur */
+      1rem /* alpha value */
+      rgba($color-black, .2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &::after {
+    /* The :after pseudo element has to have both a content and a display if you want it to display */
+    content: "";
+    /* It is inline-block because .button is alos an inline-block */
+    display: inline-block;
+
+    /*
+    The :after psuedo element is treated like a child element so these 100% measures
+    indicate it should be the same size as the container element.
+    */
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+
+    transition: all 0.4s;
+
+    /* These next properties put it directly under the existing element */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+  }
 }
