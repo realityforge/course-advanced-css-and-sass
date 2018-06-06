@@ -1,0 +1,44 @@
+.header {
+  /* 95% of the viewport height */
+  height: 95vh;
+  /*
+
+    two background images.
+    order is important
+    first is gradient with alpha that colors the image that peaks through in second layer
+    */
+  /* background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("../img/hero.jpg"); */
+  /*
+    The top of the image is anchored to the top of the .header.
+  */
+  /* background-position: top; */
+
+  /* The other background properties can be optimized into the following. */
+  background: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg) top;
+
+  /** whatever the width of the element will try to fit image to size */
+  background-size: cover;
+
+  position: relative;
+
+  /* This clips everything not contained in the polygon. This defines a polygon that cuts own triangle in bottom right corner */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  &__logo-box {
+    position: absolute;
+    left: 4rem;
+    top: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
