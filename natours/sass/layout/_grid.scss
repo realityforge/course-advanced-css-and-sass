@@ -1,0 +1,64 @@
+.row {
+  max-width: $grid-width;
+  background-color: #eee;
+
+  /*
+   The top and bottom margins will be 0. The left and right are auto which forces the browser to work it out
+   and it makes them even. This results in centered horizontal layout of this block in it's container. This is
+   a common strategy in float based layout.
+   */
+  margin: 0 auto;
+
+  /*
+    Every element except the last child.
+    Note the not psuedo selector passed another psuedo selector
+  */
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix();
+
+  /*
+   * Rather than repeating these proeprties in every one of the following col classes,
+   * we instead use an attribute selector to pick them all up
+   */
+  [class^='col-'] {
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .col-1-of-2 {
+    /*
+      The calc css function occurs at runtime and can mix unit types. As you can determine what 50% means
+      in a layout it becomes possible to do "50% + 2rem" whereas the equivalent scss function does it at
+      compile time and thus must work in same or equivalent units.
+
+      NOTE: SCSS requires that SCSS variables are interpolated using # { } syntax
+    */
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - #{$gutter-horizontal * 2}) / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc((100% - #{$gutter-horizontal * 2}) / 3 * 2);
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - #{$gutter-horizontal * 3}) / 4);
+  }
+
+  .col-2-of-4 {
+    width: calc((100% - #{$gutter-horizontal * 3}) / 4 * 2);
+  }
+
+  .col-3-of-4 {
+    width: calc((100% - #{$gutter-horizontal * 3}) / 4 * 3);
+  }
+}
