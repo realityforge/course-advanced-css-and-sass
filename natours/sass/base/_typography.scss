@@ -46,3 +46,30 @@ body {
     animation-timing-function: ease-out;
   }
 }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  /* makes the block only as long as the text */
+  display: inline-block;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  // This clips the gradiant to the text
+  // It is supported in chrome, safari and firefox - 95.13% available in Australia
+  -webkit-background-clip: text;
+  // and this makes the text 100% alpha - thus letting background gradient shine through
+  //color: rgba(0, 0, 0, 0);
+  // Which is equivalent to this
+  color: transparent;
+
+  letter-spacing: 0.2rem;
+
+  // Make sure we animate the hover changes
+  transition: all 0.2s;
+
+  &:hover {
+    transform: skewX(2deg) skewY(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+

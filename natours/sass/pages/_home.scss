@@ -1,0 +1,7 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  // This moves up the background-color so that ther eis no white wedge
+  // 20vh = 95vh (Size of header section) - 75vh (Part clipped out of header)
+  margin-top: -20vh;
+}
