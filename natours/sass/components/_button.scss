@@ -8,7 +8,7 @@
     text-decoration: none;
     padding: 1.5rem 4rem;
     border-radius: 10rem;
-    font-size: 1.6em;
+    font-size: $default-font-size;
     /*
       This transition smooths the state transition for :hover and :active state.
       So translations are transitioned to and from
