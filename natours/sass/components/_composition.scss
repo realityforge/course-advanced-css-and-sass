@@ -1,0 +1,53 @@
+.composition {
+  // SO the child photos can be absolutely position with respect to this element
+  position: relative;
+
+  &_photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 2px;
+
+    // So the following modifiers can position each individually
+    position: absolute;
+
+    // Make sure we animate the hover changes
+    transition: all 0.2s;
+
+    // arbitrary value less than the hover
+    z-index: 10;
+
+    // Gives is a space between outline and edge of image
+    outline-offset: 2rem;
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      transform: /* Make it bigger */ scale(1.05) /* Move it up slightly */ translateY(-0.5rem);
+      // The scale makes the photo look like it is closer so increase the
+      // size of the shadow and make it darker
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+
+      // Make sure this image is above the other images
+      z-index: 12;
+
+      // A green border-like box around image
+      outline: 1.5rem solid $color-primary;
+    }
+  }
+
+  //If we hover over the block then scale all the child photos that are not hovered
+  &:hover &_photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}
