@@ -5,3 +5,10 @@
   // 20vh = 95vh (Size of header section) - 75vh (Part clipped out of header)
   margin-top: -20vh;
 }
+
+.section-features {
+  padding: 20rem 0;
+
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../img/nat-4.jpg");
+  background-size: cover;
+}
