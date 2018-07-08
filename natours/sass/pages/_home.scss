@@ -11,4 +11,21 @@
 
   background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../img/nat-4.jpg");
   background-size: cover;
+
+  // Move background up to try and avoid underlying non-grey section. This will not work if they change font-size
+  // but calculating tan() at runtime using just css is a little complex so lets live with th fail scenario
+  margin-top: -10rem;
+
+  /*
+   * skew the background
+   */
+  transform: skewy(-7deg) ;
+
+  // Could also use selector "& > *" which would select any direct child
+  // This would be useful if we ever changed the content but row is simpler
+  .row {
+
+    // revert background skew so contents look normal
+    transform: skewy(7deg);
+  }
 }
