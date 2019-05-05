@@ -1,0 +1,68 @@
+.card {
+  // The card must specify height as otherwise shrinks to 0
+  // as the child component are absolutely position and thus
+  // taken out of normal flow
+  height: 52rem;
+
+  /*
+   Perspective has to be on parent component which is why we
+   end up having to create synthetic inner element card__side
+
+   Lower numbers create more dramatic perspective while higher numbers remove perspective
+   */
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+
+  // Relative position required as child is absolute
+  position: relative;
+
+  &__side {
+    height: 52rem;
+    width: 100%;
+
+    border-radius: 5px;
+    box-shadow: 0 /* horizontal offset */ 1.5rem /* vertical offset */ 4rem /* blur radius */ rgba($color-black, 0.15) /* color */;
+
+    transition: all 1.2s ease;
+
+    //Position cards absolutely so that they are on top of each other
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    // Remove the back side of the cards, essentially allowing the other card to present
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    // Back side starts out already rotated
+    &--back {
+      transform: rotateY(180deg);
+    }
+
+    // Give some nice color gradients on each of the cards backs
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8));
+    }
+    &--2 {
+      background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8));
+    }
+    &--3 {
+      background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, 0.8), rgba($color-tertiary-dark, 0.8));
+    }
+
+  }
+
+  // Front side rotated on hover
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+
+  // Back side de-rotated on hover
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+}
