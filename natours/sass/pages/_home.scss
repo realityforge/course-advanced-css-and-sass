@@ -19,7 +19,7 @@
   /*
    * skew the background
    */
-  transform: skewy(-7deg) ;
+  transform: skewy(-7deg);
 
   // Could also use selector "& > *" which would select any direct child
   // This would be useful if we ever changed the content but row is simpler
