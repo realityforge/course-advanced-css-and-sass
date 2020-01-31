@@ -6,6 +6,7 @@
 *.json text
 *.md text
 *.png binary
+*.scss text
 .gitattributes text
 .gitignore text
 .ruby-version text

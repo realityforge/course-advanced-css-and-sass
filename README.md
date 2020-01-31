@@ -8,7 +8,7 @@ The vendor directory contains course materials provided by the teacher.
 
 To get going with this site run:
 
-    $ cd natours 
+    $ cd natours
     $ yarn install
-    $ yarn run devserver & 
-    $ yarn run compile:sass:watch & 
+    $ yarn run devserver &
+    $ yarn run compile:sass:watch &
